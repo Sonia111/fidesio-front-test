@@ -1,0 +1,279 @@
+$body-color: #e5e5e5;
+$content-color: #f5f4f2;
+$body-title-color: #333;
+$bg-bleue-color: #1184d1;
+$bg-accordion-bleue-color: #0777c2;
+$bg-accordion-orange2-color: #ef8451;
+$bg-accordion-orange-color: #ea6419;
+$bg-button-color: #00a3ff;
+$link-color: #237fbd;
+$white-color: white;
+$black-color: black;
+$default-padding: 16px;
+$padding-body-lg: 63px 52px;
+$padding-body-md: 20px;
+$padding-body-xs: 5px;
+
+body {
+  color: $body-color;
+  size: 15px;
+  font-family: Roboto, sans-serif;
+  padding: $padding-body-lg;
+}
+
+div {
+  display: block;
+}
+
+a {
+  color: $link-color;
+}
+
+.col-6 {
+  width: 50%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.col-4 {
+  width: 33.33%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  display: flex;
+
+  &::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  &::before {
+    content: " ";
+    display: table;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.padding-16 {
+  padding: $default-padding;
+}
+
+.content-top {
+  background-color: $bg-bleue-color;
+  color: $white-color;
+  border-radius: 5px;
+  position: relative;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.float-right {
+  float: right;
+}
+
+.title-top {
+  font-size: 40px;
+  font-weight: 600px;
+  line-height: 25px;
+}
+
+.sous-title-top {
+  font-size: 27px;
+  font-weight: 500px;
+  line-height: 33px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.right-top-button {
+  background-image: url("../images/BTNrond.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 45px;
+  position: absolute;
+  right: 23px;
+  top: 23px;
+  width: 45px;
+}
+
+.ellipse {
+  background-image: url("../images/ellipse.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-cirle {
+  background-image: url("../images/arrow-circle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 340px;
+  min-width: 340px;
+}
+
+.news {
+  color: $body-title-color;
+
+  .title {
+    font-size: 27px;
+    font-weight: 500;
+  }
+
+  .time {
+    font-style: italic;
+    font-size: 13px;
+  }
+}
+
+.label {
+  display: inline-block;
+  font-weight: 500;
+  padding: 2px;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.1px;
+  border-radius: 10px;
+  background-color: $bg-button-color;
+  color: $white-color;
+}
+
+#accordion {
+  margin: 0 auto;
+
+  .accordion-content {
+    max-height: 0;
+    border-top: 0;
+    overflow: hidden;
+    background-color: $bg-accordion-bleue-color;
+    transition: max-height 0.3s, padding 0.3s;
+    color: $content-color;
+  }
+
+  .title {
+    padding: 20px;
+    background-color: $bg-bleue-color;
+    border-radius: 5px;
+
+    &.active {
+      & + .accordion-content {
+        max-height: 500px;
+      }
+    }
+  }
+
+  .title-two {
+    background-color: $bg-accordion-bleue-color;
+  }
+
+  .title-three {
+    background-color: $bg-accordion-orange2-color;
+  }
+
+  .title-foor {
+    background-color: $bg-accordion-orange-color;
+  }
+}
+
+.brands {
+  margin-top: 20px;
+}
+
+.list-brands {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 20px;
+    margin-right: 20px;
+  }
+}
+
+.block-news {
+  margin-top: 20px;
+
+  .news {
+    margin-top: 20px;
+
+    .black-content {
+      min-height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $black-color;
+    }
+  }
+
+  .title-block {
+    color: $link-color;
+    font-weight: 500;
+    padding-left: $default-padding;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: $padding-body-xs;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .arrow-cirle {
+    display: none;
+  }
+
+  .col-4 {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .right-top-button {
+    position: fixed;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: $padding-body-xs;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    padding: $padding-body-md;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    padding: $padding-body-lg;
+  }
+}
